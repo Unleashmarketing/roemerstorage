@@ -3,71 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RömerStorage - Flexibles Zwischenlager in Rimbach</title>
+    <title>RömerStorage - Flexible Lagerlogistik Lösungen</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
     <!-- Header -->
-    <header>
+    <header class="header">
         <div class="container">
             <div class="logo">
                 <img src="https://placehold.co/200x80?text=RÖMERSTORAGE" alt="RömerStorage Logo">
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#ueber-uns">Über uns</a></li>
-                    <li><a href="#warum-wir">Warum Wir?</a></li>
-                    <li><a href="#leistungen">Leistungen</a></li>
-                    <li><a href="#beratung">Beratung</a></li>
-                    <li><a href="#kontakt">Kontakt</a></li>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="#ueber-uns" class="nav-link">Über uns</a></li>
+                    <li class="nav-item"><a href="#warum-wir" class="nav-link">Warum Wir?</a></li>
+                    <li class="nav-item"><a href="#leistungen" class="nav-link">Leistungen</a></li>
+                    <li class="nav-item"><a href="#beratung" class="nav-link">Beratung</a></li>
+                    <li class="nav-item"><a href="#kontakt" class="nav-link">Kontakt</a></li>
                 </ul>
             </nav>
             <div class="cta-button">
-                <a href="#angebot" class="btn">Jetzt Angebot einholen</a>
+                <a href="#angebot" class="btn btn-primary">Angebot einholen <i class="fas fa-arrow-right"></i></a>
             </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Willkommen bei RömerStorage</h1>
-            <h2>Flexibles Zwischenlager mit über 1000 Palettenstellplätzen</h2>
-            <a href="#mehr" class="btn btn-white">Mehr lesen</a>
+        <div class="hero-video">
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <div class="container">
+                    <div class="hero-text">
+                        <h1 class="heading-xl reveal-fade">Willkommen bei <span>RömerStorage</span></h1>
+                        <h2 class="heading-md reveal-fade reveal-delay-1">Flexibles Zwischenlager mit über 1000 Palettenstellplätzen</h2>
+                        <div class="hero-buttons reveal-fade reveal-delay-2">
+                            <a href="#warum-wir" class="btn btn-primary">Entdecken Sie unsere Vorteile</a>
+                            <a href="#angebot" class="btn btn-outline">Angebot anfragen</a>
+                        </div>
+                    </div>
+                    <div class="scroll-indicator">
+                        <div class="mouse">
+                            <div class="wheel"></div>
+                        </div>
+                        <div>
+                            <span class="scroll-text">Scrollen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Numbers Section -->
+    <section class="key-numbers">
+        <div class="container">
+            <div class="number-grid">
+                <div class="number-item reveal-fade">
+                    <span class="number" data-count="1000">0</span>
+                    <span class="plus">+</span>
+                    <p>Palettenstellplätze</p>
+                </div>
+                <div class="number-item reveal-fade reveal-delay-1">
+                    <span class="number" data-count="98">0</span>
+                    <span class="percent">%</span>
+                    <p>Kundenzufriedenheit</p>
+                </div>
+                <div class="number-item reveal-fade reveal-delay-2">
+                    <span class="number" data-count="24">0</span>
+                    <span class="text">/7</span>
+                    <p>Überwachung</p>
+                </div>
+                <div class="number-item reveal-fade reveal-delay-3">
+                    <span class="number" data-count="15">0</span>
+                    <span class="plus">+</span>
+                    <p>Jahre Erfahrung</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="ueber-uns" class="about">
         <div class="container">
-            <div class="section-header">
-                <h2>Über uns</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>RömerStorage ist Ihr zuverlässiger Partner für flexible Lagerlogistik in Rimbach. Mit über 1000 Palettenstellplätzen bieten wir maßgeschneiderte Lösungen für Unternehmen jeder Größe.</p>
-                    <p>Unser Fokus liegt auf effizienten Prozessen, maximaler Transparenz und höchster Flexibilität - damit Sie sich auf Ihr Kerngeschäft konzentrieren können.</p>
+            <div class="about-grid">
+                <div class="about-image reveal-slide-right">
+                    <div class="image-wrapper">
+                        <img src="https://placehold.co/600x400?text=Lagerhalle" alt="RömerStorage Lagereinrichtung">
+                    </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://placehold.co/600x400?text=Lagereinrichtung" alt="RömerStorage Lagereinrichtung">
+                <div class="about-content reveal-slide-left">
+                    <div class="section-heading">
+                        <span class="subheading">Über uns</span>
+                        <h2 class="heading">Ihr Partner für flexible Logistiklösungen</h2>
+                    </div>
+                    <p>RömerStorage ist ein innovativer Anbieter von Lagerlogistik mit einem hochmodernen Zwischenlager im Herzen von Rimbach. Wir kombinieren langjährige Erfahrung mit zukunftsweisenden Technologien, um maßgeschneiderte Lösungen für Unternehmen jeder Größe zu entwickeln.</p>
+                    <p>Unser Hauptziel ist es, Ihnen als Kunde dabei zu helfen, sich auf Ihr Kerngeschäft zu konzentrieren, während wir uns um Ihre logistischen Herausforderungen kümmern.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-warehouse"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Flexible Lösungen</h3>
+                                <p>Anpassbare Lagerflächen nach Ihrem Bedarf</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Maximale Sicherheit</h3>
+                                <p>Modernste Überwachungs- und Sicherheitssysteme</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Values Section -->
-    <section id="werte" class="values">
+    <section id="werte" class="values parallax-section">
+        <div class="parallax-bg"></div>
         <div class="container">
-            <div class="section-header">
-                <h2>Unsere Werte</h2>
-            </div>
-            <div class="value-content">
-                <p>Wir streben nach Effizienz, Transparenz und Flexibilität, demnach bieten wir jedem Kunden ein individuelles Angebot dessen Ware bei uns einzulagern</p>
+            <div class="values-content">
+                <div class="section-heading text-center">
+                    <span class="subheading light">Unsere Werte</span>
+                    <h2 class="heading light">Was uns antreibt</h2>
+                </div>
+                <div class="values-statement">
+                    <p>Wir streben nach <span>Effizienz</span>, <span>Transparenz</span> und <span>Flexibilität</span>, demnach bieten wir jedem Kunden ein individuelles Angebot dessen Ware bei uns einzulagern</p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card reveal-fade">
+                        <div class="card-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Effizienz</h3>
+                        <p>Optimierte Prozesse, die Zeit und Kosten sparen</p>
+                    </div>
+                    <div class="value-card reveal-fade reveal-delay-1">
+                        <div class="card-icon">
+                            <i class="fas fa-glasses"></i>
+                        </div>
+                        <h3>Transparenz</h3>
+                        <p>Klare Kommunikation und nachvollziehbare Kosten</p>
+                    </div>
+                    <div class="value-card reveal-fade reveal-delay-2">
+                        <div class="card-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h3>Flexibilität</h3>
+                        <p>Anpassungsfähige Lösungen für jede Anforderung</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -75,61 +181,122 @@
     <!-- Why Us Section -->
     <section id="warum-wir" class="why-us">
         <div class="container">
-            <div class="section-header">
-                <h2>Warum Wir?</h2>
-                <h3>Flexibles Zwischenlager mit über 1000 Palettenstellplätze</h3>
+            <div class="section-heading text-center">
+                <span class="subheading">Warum Wir?</span>
+                <h2 class="heading">Vorteile unserer Lagerlogistik</h2>
+                <p class="heading-text">Als spezialisierter Anbieter im Bereich Lagerlogistik bieten wir Ihnen eine Reihe von Vorteilen, die für Ihr Unternehmen von großem Nutzen sein können.</p>
             </div>
-            <div class="why-us-content">
-                <div class="why-us-text">
-                    <p>Als spezialisierter Anbieter im Bereich Lagerlogistik bieten wir Ihnen die Möglichkeit, Lagerflächen extern bei uns anzumieten. Diese Fremdlagerung bringt eine Reihe von Vorteilen mit sich, die für Ihr Unternehmen von großem Nutzen sein könnten:</p>
-                    <ul class="benefits-list">
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Mehr Umsatz ermöglichen</h4>
-                                <p>Durch schnelle, flexible Lagerlösungen können Sie größere Aufträge annehmen und Engpässe vermeiden.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Gewinn steigern</h4>
-                                <p>Sie sparen Fixkosten, nutzen flexible Tarife und zahlen nur, was Sie tatsächlich brauchen. Das verbessert Ihre Marge.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Kapazitäten nach Bedarf anpassen</h4>
-                                <p>Wachsen Sie ohne Risiko: Ob saisonale Spitzen oder kurzfristige Projekte, wir passen die Lagerkapazität an Ihren aktuellen Bedarf an.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Persönliche Betreuung</h4>
-                                <p>Direkter Ansprechpartner, schnelle Entscheidungen, individuelle Lösungen.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Zuverlässigkeit & Flexibilität</h4>
-                                <p>Wir halten Ihnen den Rücken frei, damit Sie sich auf Ihr Kerngeschäft konzentrieren können.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-check-circle"></i>
-                            <div>
-                                <h4>Transparente Kosten</h4>
-                                <p>Keine versteckten Gebühren, volle Planungssicherheit.</p>
-                            </div>
-                        </li>
-                    </ul>
+            
+            <div class="benefits-container">
+                <div class="benefits-tabs">
+                    <button class="tab-btn active" data-tab="tab1">Wirtschaftliche Vorteile</button>
+                    <button class="tab-btn" data-tab="tab2">Operative Vorteile</button>
+                    <button class="tab-btn" data-tab="tab3">Strategische Vorteile</button>
                 </div>
-                <div class="why-us-image">
-                    <img src="https://placehold.co/600x800?text=Lager" alt="RömerStorage Lager">
+                
+                <div class="tabs-content">
+                    <div class="tab-panel active" id="tab1">
+                        <div class="benefits-grid">
+                            <div class="benefit-card reveal-fade">
+                                <div class="card-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Mehr Umsatz ermöglichen</h3>
+                                    <p>Durch schnelle, flexible Lagerlösungen können Sie größere Aufträge annehmen und Engpässe vermeiden.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-card reveal-fade reveal-delay-1">
+                                <div class="card-icon">
+                                    <i class="fas fa-coins"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Gewinn steigern</h3>
+                                    <p>Sie sparen Fixkosten, nutzen flexible Tarife und zahlen nur, was Sie tatsächlich brauchen. Das verbessert Ihre Marge.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-card reveal-fade reveal-delay-2">
+                                <div class="card-icon">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Transparente Kosten</h3>
+                                    <p>Keine versteckten Gebühren, volle Planungssicherheit und klare Abrechnung.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel" id="tab2">
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-expand-arrows-alt"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Kapazitäten nach Bedarf anpassen</h3>
+                                    <p>Wachsen Sie ohne Risiko: Ob saisonale Spitzen oder kurzfristige Projekte, wir passen die Lagerkapazität an Ihren aktuellen Bedarf an.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Optimierte Prozesse</h3>
+                                    <p>Profitieren Sie von unseren effizienten Abläufen und reduzieren Sie Ihren administrativen Aufwand.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-truck-loading"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Schnellere Auftragsabwicklung</h3>
+                                    <p>Unsere optimierten Prozesse sorgen für kürzere Durchlaufzeiten und schnellere Lieferungen an Ihre Kunden.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel" id="tab3">
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Persönliche Betreuung</h3>
+                                    <p>Direkter Ansprechpartner, schnelle Entscheidungen, individuelle Lösungen für Ihre spezifischen Bedürfnisse.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Zuverlässigkeit & Flexibilität</h3>
+                                    <p>Wir halten Ihnen den Rücken frei, damit Sie sich auf Ihr Kerngeschäft konzentrieren können.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-bullseye"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Fokus auf Ihr Kerngeschäft</h3>
+                                    <p>Durch die Auslagerung Ihrer Logistik können Sie Ihre Ressourcen auf Ihre Kernkompetenzen konzentrieren.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            
+            <div class="cta-box reveal-fade">
+                <h3>Überzeugt?</h3>
+                <p>Lassen Sie uns gemeinsam die optimale Lösung für Ihre Lagerbedürfnisse finden.</p>
+                <a href="#angebot" class="btn btn-primary">Angebot anfordern <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -137,45 +304,115 @@
     <!-- Services Section -->
     <section id="leistungen" class="services">
         <div class="container">
-            <div class="section-header">
-                <h2>Unsere Leistungen</h2>
+            <div class="section-heading text-center">
+                <span class="subheading">Unsere Leistungen</span>
+                <h2 class="heading">Was wir für Sie tun können</h2>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-truck-loading"></i>
-                    <h3>Übernahme der Wareneingangskontrolle</h3>
+            
+            <div class="services-wrapper">
+                <div class="services-tabs">
+                    <button class="service-tab active" data-service="lagerung">
+                        <i class="fas fa-warehouse"></i>
+                        <span>Lagerung</span>
+                    </button>
+                    <button class="service-tab" data-service="warenhandling">
+                        <i class="fas fa-dolly"></i>
+                        <span>Warenhandling</span>
+                    </button>
+                    <button class="service-tab" data-service="administration">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Administration</span>
+                    </button>
+                    <button class="service-tab" data-service="transport">
+                        <i class="fas fa-truck"></i>
+                        <span>Transport</span>
+                    </button>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-boxes"></i>
-                    <h3>Warenverwaltung</h3>
+                
+                <div class="service-content-wrapper">
+                    <div class="service-content active" id="lagerung">
+                        <div class="service-image">
+                            <img src="https://placehold.co/800x500?text=Lagerung" alt="Lagerung">
+                        </div>
+                        <div class="service-details">
+                            <h3>Flexible Lagerung</h3>
+                            <p>Mit über 1000 Palettenstellplätzen bieten wir Ihnen die Möglichkeit, Ihre Waren sicher und flexibel bei uns einzulagern.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Kurz- und langfristige Lagerung</li>
+                                <li><i class="fas fa-check"></i> Temperaturgeführte Bereiche</li>
+                                <li><i class="fas fa-check"></i> Hochwertige Lagertechnik</li>
+                                <li><i class="fas fa-check"></i> 24/7 Sicherheitsüberwachung</li>
+                                <li><i class="fas fa-check"></i> Flexible Skalierbarkeit</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-content" id="warenhandling">
+                        <div class="service-image">
+                            <img src="https://placehold.co/800x500?text=Warenhandling" alt="Warenhandling">
+                        </div>
+                        <div class="service-details">
+                            <h3>Professionelles Warenhandling</h3>
+                            <p>Wir übernehmen das gesamte Handling Ihrer Waren - von der Eingangskontrolle bis zur Kommissionierung.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Wareneingangskontrolle</li>
+                                <li><i class="fas fa-check"></i> Kommissionierung nach Ihren Vorgaben</li>
+                                <li><i class="fas fa-check"></i> Be- und Entladung von LKWs</li>
+                                <li><i class="fas fa-check"></i> Verpackungs- und Umverpackungsservice</li>
+                                <li><i class="fas fa-check"></i> Qualitätskontrolle</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-content" id="administration">
+                        <div class="service-image">
+                            <img src="https://placehold.co/800x500?text=Administration" alt="Administration">
+                        </div>
+                        <div class="service-details">
+                            <h3>Umfassende Administration</h3>
+                            <p>Wir kümmern uns um alle administrativen Aufgaben rund um Ihre Lagerhaltung.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Bestandsführung und Inventurverwaltung</li>
+                                <li><i class="fas fa-check"></i> Barcode-Etikettierung</li>
+                                <li><i class="fas fa-check"></i> Erstellung von Frachtpapieren</li>
+                                <li><i class="fas fa-check"></i> Chargenverwaltung</li>
+                                <li><i class="fas fa-check"></i> Reporting und Analysen</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-content" id="transport">
+                        <div class="service-image">
+                            <img src="https://placehold.co/800x500?text=Transport" alt="Transport">
+                        </div>
+                        <div class="service-details">
+                            <h3>Zuverlässiger Transport</h3>
+                            <p>Wir organisieren den Transport Ihrer Waren - pünktlich und sicher.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Organisation von Transporten</li>
+                                <li><i class="fas fa-check"></i> Nationale und internationale Lieferungen</li>
+                                <li><i class="fas fa-check"></i> Express- und Terminlieferungen</li>
+                                <li><i class="fas fa-check"></i> Tracking und Sendungsverfolgung</li>
+                                <li><i class="fas fa-check"></i> Verzollung und Import/Export-Abwicklung</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-truck"></i>
-                    <h3>Beladung von LKW's</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div class="cta-content reveal-fade">
+                    <h2>Bereit für eine maßgeschneiderte Lösung?</h2>
+                    <p>Lassen Sie uns gemeinsam herausfinden, wie wir Ihre Logistik optimieren können.</p>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-clipboard-check"></i>
-                    <h3>Kommissionierung von Waren</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-warehouse"></i>
-                    <h3>Lagerungen in unserem Haus</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-tasks"></i>
-                    <h3>Inventurdurchführung für Sie</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-barcode"></i>
-                    <h3>Barcode Etikett Erstellung</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-file-alt"></i>
-                    <h3>Frachtpapier Erstellung</h3>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-money-bill-wave"></i>
-                    <h3>Chargen Verwaltung</h3>
+                <div class="cta-buttons reveal-fade reveal-delay-1">
+                    <a href="#angebot" class="btn btn-primary btn-lg">Angebot anfordern</a>
+                    <a href="#kontakt" class="btn btn-outline btn-lg">Kontakt aufnehmen</a>
                 </div>
             </div>
         </div>
@@ -184,12 +421,47 @@
     <!-- Online Booking Section -->
     <section id="online-buchen" class="online-booking">
         <div class="container">
-            <div class="section-header">
-                <h2>Online buchen</h2>
-            </div>
-            <div class="booking-content">
-                <p>Wir alle haben einen vollen Terminkalender und wenig Zeit. Daher optimieren wir stetig unser Angebot, um Ihnen das Leben zu erleichtern. Mit unserem Online-Kontaktformular können Sie Ihren Termin bei uns noch schneller und einfacher buchen. Egal, ob Sie tagsüber schlecht telefonieren können oder lieber alles Persönlich erledigen - Sie können Ihre Buchung auf unserer Website jederzeit direkt vornehmen, mit nur einem Klick.</p>
-                <a href="#termin" class="btn">Termin buchen</a>
+            <div class="booking-grid">
+                <div class="booking-image reveal-slide-right">
+                    <img src="https://placehold.co/600x800?text=Online+Buchung" alt="Online Buchung">
+                </div>
+                <div class="booking-content reveal-slide-left">
+                    <div class="section-heading">
+                        <span class="subheading">Einfach & Schnell</span>
+                        <h2 class="heading">Online buchen</h2>
+                    </div>
+                    <p>Wir alle haben einen vollen Terminkalender und wenig Zeit. Daher optimieren wir stetig unser Angebot, um Ihnen das Leben zu erleichtern.</p>
+                    <div class="booking-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Zeitersparnis</h3>
+                                <p>Buchen Sie Ihren Termin jederzeit online ohne Wartezeiten</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>24/7 verfügbar</h3>
+                                <p>Unser Online-Portal steht Ihnen rund um die Uhr zur Verfügung</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="feature-text">
+                                <h3>Sofortige Bestätigung</h3>
+                                <p>Erhalten Sie direkt eine Bestätigung Ihrer Buchung</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#termin" class="btn btn-primary">Termin buchen <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
         </div>
     </section>
@@ -197,15 +469,42 @@
     <!-- Consulting Section -->
     <section id="beratung" class="consulting">
         <div class="container">
-            <div class="section-header">
-                <h2>Beratung</h2>
+            <div class="section-heading text-center">
+                <span class="subheading">Beratung</span>
+                <h2 class="heading">Professionelle Beratung für optimale Lösungen</h2>
             </div>
-            <div class="consulting-content">
-                <p>Da Unsere Kunden für uns an erster Stelle stehen legen wir wert auf eine Professionelle und gleichzeitig zielstrebige Beratung um unseren Kunden die besten Möglichen zu vermitteln.</p>
-                <p>Zugleich, legen wir größten Wert auf eine vertrauensvolle und transparente <strong>Kommunikation</strong>.</p>
-                <p>Nur durch eine reine Kommunikation können wir Ihre individuellen Bedürfnisse genau verstehen und <strong>maßgeschneiderte Angebote</strong> erstellen, die perfekt zu Ihnen passen.</p>
-                <p>Bei uns stehen Sie als Kunde im Mittelpunkt, und wir sind bestrebt, Ihnen stets die besten Lösungen anzubieten, die Ihren Anforderungen gerecht werden. Vertrauen und Klarheit sind die Grundlagen unserer <strong>Zusammenarbeit</strong>, damit Sie sich jederzeit sicher und gut beraten fühlen können.</p>
-                <a href="#angebot" class="btn">Jetzt Angebot anfordern</a>
+            <div class="consulting-grid">
+                <div class="consulting-card reveal-fade">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Kunden im Mittelpunkt</h3>
+                    <p>Unsere Kunden stehen für uns an erster Stelle. Wir legen Wert auf eine professionelle und zielstrebige Beratung, um Ihnen die besten Möglichkeiten zu vermitteln.</p>
+                </div>
+                <div class="consulting-card reveal-fade reveal-delay-1">
+                    <div class="card-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Transparente Kommunikation</h3>
+                    <p>Wir legen größten Wert auf eine vertrauensvolle und transparente Kommunikation, damit Sie stets über alle Prozesse informiert sind.</p>
+                </div>
+                <div class="consulting-card reveal-fade reveal-delay-2">
+                    <div class="card-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Maßgeschneiderte Angebote</h3>
+                    <p>Nur durch eine reine Kommunikation können wir Ihre individuellen Bedürfnisse genau verstehen und maßgeschneiderte Angebote erstellen, die perfekt zu Ihnen passen.</p>
+                </div>
+                <div class="consulting-card reveal-fade reveal-delay-3">
+                    <div class="card-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Vertrauen & Klarheit</h3>
+                    <p>Vertrauen und Klarheit sind die Grundlagen unserer Zusammenarbeit, damit Sie sich jederzeit sicher und gut beraten fühlen können.</p>
+                </div>
+            </div>
+            <div class="consulting-cta reveal-fade">
+                <a href="#angebot" class="btn btn-primary btn-lg">Jetzt Angebot anfordern</a>
             </div>
         </div>
     </section>
@@ -213,69 +512,100 @@
     <!-- Offer Request Section -->
     <section id="angebot" class="offer-request">
         <div class="container">
-            <div class="section-header">
-                <h2>Jetzt individuelles Angebot anfordern</h2>
-            </div>
-            <div class="offer-content">
-                <p>Fordern sie jetzt ihr individuelles Angebot an!</p>
-                <p>Da jedes Unternehmen verschieden ist bieten wir maßgeschneiderte Angebote an, die an verschiedenen Aspekte ihres Unternehmens angepasst sind.</p>
-                <div class="form-container">
-                    <form id="offer-form">
-                        <div class="form-group">
-                            <label for="company">Unternehmen</label>
-                            <input type="text" id="company" name="company" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-Mail</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Telefon</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="message">Nachricht</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="pallets">Anzahl der Paletten</label>
-                            <input type="number" id="pallets" name="pallets" min="1">
-                        </div>
-                        <div class="form-group">
-                            <label for="duration">Lagerdauer (Monate)</label>
-                            <input type="number" id="duration" name="duration" min="1">
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="services">Gewünschte Zusatzleistungen</label>
-                            <div class="checkbox-group">
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="service-1" name="services" value="Wareneingangskontrolle">
-                                    <label for="service-1">Wareneingangskontrolle</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="service-2" name="services" value="Kommissionierung">
-                                    <label for="service-2">Kommissionierung</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="service-3" name="services" value="LKW-Beladung">
-                                    <label for="service-3">LKW-Beladung</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="service-4" name="services" value="Inventurdurchführung">
-                                    <label for="service-4">Inventurdurchführung</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="service-5" name="services" value="Barcode-Erstellung">
-                                    <label for="service-5">Barcode-Erstellung</label>
-                                </div>
+            <div class="offer-grid">
+                <div class="offer-content reveal-slide-right">
+                    <div class="section-heading">
+                        <span class="subheading">Individuell für Sie</span>
+                        <h2 class="heading">Jetzt Angebot anfordern</h2>
+                    </div>
+                    <p>Fordern Sie jetzt Ihr individuelles Angebot an! Da jedes Unternehmen verschieden ist, bieten wir maßgeschneiderte Angebote an, die an verschiedene Aspekte Ihres Unternehmens angepasst sind.</p>
+                    <div class="offer-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Anfrage senden</h3>
+                                <p>Füllen Sie das Formular mit Ihren spezifischen Anforderungen aus</p>
                             </div>
                         </div>
-                        <div class="form-group full-width">
-                            <button type="submit" class="btn">Angebot anfordern</button>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Beratungsgespräch</h3>
+                                <p>Wir kontaktieren Sie für ein persönliches Beratungsgespräch</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Individuelles Angebot</h3>
+                                <p>Sie erhalten ein maßgeschneidertes Angebot für Ihre Bedürfnisse</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-form reveal-slide-left">
+                    <form id="offer-form" class="form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="company">Unternehmen</label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-Mail</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefon</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="message">Nachricht</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="pallets">Anzahl der Paletten</label>
+                                <input type="number" id="pallets" name="pallets" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="duration">Lagerdauer (Monate)</label>
+                                <input type="number" id="duration" name="duration" min="1">
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Gewünschte Zusatzleistungen</label>
+                                <div class="checkbox-grid">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="service-1" name="services" value="Wareneingangskontrolle">
+                                        <label for="service-1">Wareneingangskontrolle</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="service-2" name="services" value="Kommissionierung">
+                                        <label for="service-2">Kommissionierung</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="service-3" name="services" value="LKW-Beladung">
+                                        <label for="service-3">LKW-Beladung</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="service-4" name="services" value="Inventurdurchführung">
+                                        <label for="service-4">Inventurdurchführung</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="service-5" name="services" value="Barcode-Erstellung">
+                                        <label for="service-5">Barcode-Erstellung</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group full-width">
+                                <div id="cost-estimate" class="hidden"></div>
+                            </div>
+                            <div class="form-group full-width">
+                                <button type="button" id="calculate-btn" class="btn btn-secondary">Kosten berechnen</button>
+                                <button type="submit" class="btn btn-primary">Angebot anfordern <i class="fas fa-paper-plane"></i></button>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -286,15 +616,14 @@
     <!-- Appointment Section -->
     <section id="termin" class="appointment">
         <div class="container">
-            <div class="section-header">
-                <h2>Termin buchen</h2>
+            <div class="section-heading text-center">
+                <span class="subheading">Terminvereinbarung</span>
+                <h2 class="heading">Termin buchen</h2>
+                <p class="heading-text">Vereinbaren Sie einen Termin zur Besichtigung unserer Lagerräume oder für ein persönliches Beratungsgespräch.</p>
             </div>
-            <div class="appointment-content">
-                <div class="appointment-text">
-                    <p>Vereinbaren Sie einen Termin zur Besichtigung unserer Lagerräume oder für ein persönliches Beratungsgespräch.</p>
-                </div>
-                <div class="form-container">
-                    <form id="appointment-form">
+            <div class="appointment-form-wrapper reveal-fade">
+                <form id="appointment-form" class="form">
+                    <div class="form-grid">
                         <div class="form-group">
                             <label for="app-name">Name</label>
                             <input type="text" id="app-name" name="app-name" required>
@@ -315,7 +644,7 @@
                             <label for="app-time">Uhrzeit</label>
                             <input type="time" id="app-time" name="app-time" required>
                         </div>
-                        <div class="form-group full-width">
+                        <div class="form-group">
                             <label for="app-reason">Termingrund</label>
                             <select id="app-reason" name="app-reason" required>
                                 <option value="">Bitte wählen</option>
@@ -330,9 +659,79 @@
                             <textarea id="app-message" name="app-message" rows="3"></textarea>
                         </div>
                         <div class="form-group full-width">
-                            <button type="submit" class="btn">Termin buchen</button>
+                            <button type="submit" class="btn btn-primary">Termin buchen <i class="fas fa-calendar-check"></i></button>
                         </div>
-                    </form>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-heading text-center">
+                <span class="subheading">Kundenstimmen</span>
+                <h2 class="heading">Was unsere Kunden sagen</h2>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <div class="testimonial-content">
+                                <p>RömerStorage hat unsere Lagerprobleme mit einer maßgeschneiderten Lösung perfekt gelöst. Der Service ist erstklassig und die Flexibilität genau das, was wir brauchten.</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://placehold.co/80x80?text=MW" alt="Max Weinmann">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Max Weinmann</h4>
+                                    <p>Geschäftsführer, TechnoPlus GmbH</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <div class="testimonial-content">
+                                <p>Seit wir mit RömerStorage zusammenarbeiten, konnten wir unsere Lieferzeiten verkürzen und gleichzeitig Kosten sparen. Ein zuverlässiger Partner, den wir gerne weiterempfehlen.</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://placehold.co/80x80?text=SM" alt="Sandra Mueller">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Sandra Müller</h4>
+                                    <p>Logistikleiterin, Fashionista KG</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <div class="testimonial-content">
+                                <p>Die transparente Kommunikation und die individuelle Beratung haben uns überzeugt. RömerStorage versteht unsere Bedürfnisse und setzt sie professionell um.</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-image">
+                                    <img src="https://placehold.co/80x80?text=TS" alt="Thomas Schmidt">
+                                </div>
+                                <div class="author-info">
+                                    <h4>Thomas Schmidt</h4>
+                                    <p>Inhaber, Schmidt & Partner</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots"></div>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>
@@ -341,94 +740,133 @@
     <!-- Contact Section -->
     <section id="kontakt" class="contact">
         <div class="container">
-            <div class="section-header">
-                <h2>Kontakt</h2>
+            <div class="section-heading text-center">
+                <span class="subheading">Kontakt</span>
+                <h2 class="heading">Sprechen Sie mit uns</h2>
             </div>
             <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Adresse</h4>
-                            <p>RömerStorage GmbH<br>Musterstraße 123<br>64668 Rimbach</p>
+                <div class="contact-info reveal-slide-right">
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Adresse</h3>
                         </div>
+                        <p>RömerStorage GmbH<br>Musterstraße 123<br>64668 Rimbach</p>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Telefon</h4>
-                            <p><a href="tel:+4912345678900">+49 (0) 1234 56789-00</a></p>
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-phone-alt"></i>
+                            <h3>Telefon</h3>
                         </div>
+                        <p><a href="tel:+4912345678900">+49 (0) 1234 56789-00</a></p>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>E-Mail</h4>
-                            <p><a href="mailto:info@romerstorage.de">info@romerstorage.de</a></p>
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-envelope"></i>
+                            <h3>E-Mail</h3>
                         </div>
+                        <p><a href="mailto:info@romerstorage.de">info@romerstorage.de</a></p>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Öffnungszeiten</h4>
-                            <p>Montag - Freitag: 08:00 - 17:00 Uhr<br>Samstag & Sonntag: Geschlossen</p>
+                    <div class="info-card">
+                        <div class="card-header">
+                            <i class="fas fa-clock"></i>
+                            <h3>Öffnungszeiten</h3>
                         </div>
+                        <p>Montag - Freitag: 08:00 - 17:00 Uhr<br>Samstag & Sonntag: Geschlossen</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-xing"></i></a>
                     </div>
                 </div>
-                <div class="contact-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20997.703497661007!2d8.728864848655292!3d49.62628061250076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd9aaa0f4a0cbf%3A0xf791d511f47cf6c3!2s64668%20Rimbach!5e0!3m2!1sde!2sde!4v1704992350022!5m2!1sde!2sde" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="contact-map reveal-slide-left">
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20997.703497661007!2d8.728864848655292!3d49.62628061250076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd9aaa0f4a0cbf%3A0xf791d511f47cf6c3!2s64668%20Rimbach!5e0!3m2!1sde!2sde!4v1704992350022!5m2!1sde!2sde" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="https://placehold.co/200x80?text=RÖMERSTORAGE" alt="RömerStorage Logo">
-                    <p>Ihr zuverlässiger Partner für flexible Lagerlogistik</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Schnelllinks</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#ueber-uns">Über uns</a></li>
-                        <li><a href="#warum-wir">Warum Wir?</a></li>
-                        <li><a href="#leistungen">Leistungen</a></li>
-                        <li><a href="#beratung">Beratung</a></li>
-                        <li><a href="#kontakt">Kontakt</a></li>
-                    </ul>
-                </div>
-                <div class="footer-services">
-                    <h4>Unsere Leistungen</h4>
-                    <ul>
-                        <li>Zwischenlagerung</li>
-                        <li>Wareneingangskontrolle</li>
-                        <li>Kommissionierung</li>
-                        <li>LKW-Beladung</li>
-                        <li>Inventurdurchführung</li>
-                        <li>Barcode-Etikettierung</li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Kontakt</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Musterstraße 123, 64668 Rimbach</p>
-                    <p><i class="fas fa-phone"></i> +49 (0) 1234 56789-00</p>
-                    <p><i class="fas fa-envelope"></i> info@romerstorage.de</p>
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-about">
+                        <div class="footer-logo">
+                            <img src="https://placehold.co/200x80?text=RÖMERSTORAGE" alt="RömerStorage Logo">
+                        </div>
+                        <p>Ihr zuverlässiger Partner für flexible Lagerlogistik in Rimbach. Wir bieten maßgeschneiderte Lösungen für Unternehmen jeder Größe.</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-xing"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Schnelllinks</h3>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#ueber-uns">Über uns</a></li>
+                            <li><a href="#warum-wir">Warum Wir?</a></li>
+                            <li><a href="#leistungen">Leistungen</a></li>
+                            <li><a href="#beratung">Beratung</a></li>
+                            <li><a href="#kontakt">Kontakt</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-services">
+                        <h3>Unsere Leistungen</h3>
+                        <ul>
+                            <li><a href="#leistungen">Zwischenlagerung</a></li>
+                            <li><a href="#leistungen">Wareneingangskontrolle</a></li>
+                            <li><a href="#leistungen">Kommissionierung</a></li>
+                            <li><a href="#leistungen">LKW-Beladung</a></li>
+                            <li><a href="#leistungen">Inventurdurchführung</a></li>
+                            <li><a href="#leistungen">Barcode-Etikettierung</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Bleiben Sie auf dem Laufenden und abonnieren Sie unseren Newsletter.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Ihre E-Mail-Adresse" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 RömerStorage GmbH. Alle Rechte vorbehalten.</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>&copy; <span class="current-year">2025</span> RömerStorage GmbH. Alle Rechte vorbehalten.</p>
+                </div>
                 <div class="footer-legal">
-                    <a href="#impressum">Impressum</a>
-                    <a href="#datenschutz">Datenschutz</a>
-                    <a href="#agb">AGB</a>
+                    <a href="#">Impressum</a>
+                    <a href="#">Datenschutz</a>
+                    <a href="#">AGB</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Cookie Consent -->
+    <div class="cookie-consent">
+        <div class="cookie-content">
+            <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Durch die Nutzung dieser Website erklären Sie sich mit unserer <a href="#">Cookie-Richtlinie</a> einverstanden.</p>
+            <div class="cookie-buttons">
+                <button class="btn btn-outline btn-sm cookie-settings">Einstellungen</button>
+                <button class="btn btn-primary btn-sm cookie-accept">Akzeptieren</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
