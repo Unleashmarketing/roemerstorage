@@ -82,9 +82,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const sectionId = section.getAttribute('id');
             
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                document.querySelector(`.nav-link[href="#${sectionId}"]`).classList.add('active');
-            } else {
-                document.querySelector(`.nav-link[href="#${sectionId}"]`).classList.remove('active');
+                const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                if (activeLink) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    activeLink.classList.add('active');
+                }
             }
         });
     }
@@ -360,6 +364,208 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ----------------------------------------
     // Form Validation
+    // ----------------------------------------
+    const forms = document.querySelectorAll('form');
+    
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            const requiredFields = form.querySelectorAll('[required]');
+            
+            requiredFields.forEach(field => {
+                // Remove existing validation styling and messages
+                field.classList.remove('is-invalid');
+                const existingError = field.parentElement.querySelector('.error-message');
+                if (existingError) existingError.remove();
+                
+                // Check if field is empty
+                if (!field.value.trim()) {
+                    isValid = false;
+                    showError(field, 'Dieses Feld ist erforderlich');
+                } else if (field.type === 'email' && !isValidEmail(field.value)) {
+                    isValid = false;
+                    showError(field, 'Bitte geben Sie eine gültige E-Mail-Adresse ein');
+                }
+            });
+            
+            if (isValid) {
+                // Simulate form submission
+                const formId = form.getAttribute('id');
+                
+                // Replace form with success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'success-message';
+                
+                let message = '';
+                
+                if (formId === 'offer-form') {
+                    message = 'Vielen Dank für Ihre Anfrage! Wir werden uns in Kürze mit Ihrem individuellen Angebot bei Ihnen melden.';
+                } else {
+                    message = 'Vielen Dank für Ihre Nachricht! Wir werden uns in Kürze bei Ihnen melden.';
+                }
+                
+                successMessage.innerHTML = `
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Erfolgreich gesendet!</h3>
+                    <p>${message}</p>
+                `;
+                
+                form.parentElement.replaceChild(successMessage, form);
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+    });
+    
+    function showError(field, message) {
+        field.classList.add('is-invalid');
+        
+        const errorMessage = document.createElement('div');
+        errorMessage.className = 'error-message';
+        errorMessage.textContent = message;
+        
+        field.parentElement.appendChild(errorMessage);
+    }
+    
+    function isValidEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+    
+    // ----------------------------------------
+    // Cost Calculator
+    // ----------------------------------------
+    const calculateBtn = document.getElementById('calculate-btn');
+    const costEstimate = document.getElementById('cost-estimate');
+    const palletsInput = document.getElementById('pallets');
+    const durationInput = document.getElementById('duration');
+    
+    if (calculateBtn && costEstimate && palletsInput && durationInput) {
+        calculateBtn.addEventListener('click', function() {
+            const pallets = parseInt(palletsInput.value) || 0;
+            const duration = parseInt(durationInput.value) || 0;
+            
+            if (pallets <= 0 || duration <= 0) {
+                costEstimate.innerHTML = `
+                    <h3>Kostenabschätzung</h3>
+                    <p class="error-message">Bitte geben Sie eine gültige Anzahl an Paletten und eine Lagerdauer ein.</p>
+                `;
+                costEstimate.classList.remove('hidden');
+                return;
+            }
+            
+            // Base rate per pallet per month
+            const baseRate = 12.50;
+            
+            // Volume discount
+            let rate = baseRate;
+            if (pallets > 50) {
+                rate = baseRate * 0.9;
+            }
+            if (pallets > 100) {
+                rate = baseRate * 0.85;
+            }
+            if (pallets > 200) {
+                rate = baseRate * 0.8;
+            }
+            
+            // Duration discount
+            let durationFactor = 1;
+            if (duration >= 6) {
+                durationFactor = 0.95;
+            }
+            if (duration >= 12) {
+                durationFactor = 0.9;
+            }
+            
+            const total = pallets * rate * duration * durationFactor;
+            const monthlyRate = total / duration;
+            
+            costEstimate.innerHTML = `
+                <h3>Kostenabschätzung</h3>
+                <p>Basierend auf <strong>${pallets} Paletten</strong> für <strong>${duration} Monate</strong>:</p>
+                <div class="estimate-details">
+                    <div class="estimate-row">
+                        <span>Grundpreis pro Palette:</span>
+                        <span>${rate.toFixed(2)}€ / Monat</span>
+                    </div>
+                    <div class="estimate-row">
+                        <span>Monatlicher Preis:</span>
+                        <span>${monthlyRate.toFixed(2)}€</span>
+                    </div>
+                    <div class="estimate-row total">
+                        <span>Gesamtpreis:</span>
+                        <span>${total.toFixed(2)}€</span>
+                    </div>
+                </div>
+                <p class="note">Dies ist eine unverbindliche Kostenschätzung. Für ein genaues Angebot kontaktieren Sie uns bitte.</p>
+            `;
+            
+            costEstimate.classList.remove('hidden');
+            
+            // Add some styling to the estimate
+            const estimateDetails = costEstimate.querySelector('.estimate-details');
+            if (estimateDetails) {
+                estimateDetails.style.marginTop = '15px';
+                estimateDetails.style.marginBottom = '15px';
+                estimateDetails.style.borderRadius = '5px';
+                estimateDetails.style.overflow = 'hidden';
+                
+                const estimateRows = estimateDetails.querySelectorAll('.estimate-row');
+                estimateRows.forEach((row, index) => {
+                    row.style.display = 'flex';
+                    row.style.justifyContent = 'space-between';
+                    row.style.padding = '10px 15px';
+                    row.style.backgroundColor = index % 2 === 0 ? '#f9f9f9' : '#ffffff';
+                    
+                    if (row.classList.contains('total')) {
+                        row.style.backgroundColor = 'var(--primary)';
+                        row.style.color = 'white';
+                        row.style.fontWeight = 'bold';
+                    }
+                });
+            }
+        });
+    }
+    
+    // ----------------------------------------
+    // Cookie Consent
+    // ----------------------------------------
+    const cookieConsent = document.querySelector('.cookie-consent');
+    const cookieAccept = document.querySelector('.cookie-accept');
+    const cookieSettings = document.querySelector('.cookie-settings');
+    
+    // Check if user has already accepted cookies
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+    
+    if (!cookiesAccepted && cookieConsent) {
+        // Show cookie consent after a delay
+        setTimeout(() => {
+            cookieConsent.classList.add('show');
+        }, 2000);
+        
+        // Accept cookies
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieConsent.classList.remove('show');
+        });
+        
+        // Cookie settings (for now, just close the banner)
+        cookieSettings.addEventListener('click', () => {
+            // Here you would typically open a more detailed cookie settings modal
+            // For simplicity, we'll just close the banner
+            cookieConsent.classList.remove('show');
+        });
+    }
+    
+    // ----------------------------------------
+    // Current Year
+    // ----------------------------------------
+    document.querySelector('.current-year').textContent = new Date().getFullYear();
+}); Validation
     // ----------------------------------------
     const forms = document.querySelectorAll('form');
     
