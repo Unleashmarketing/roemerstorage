@@ -481,13 +481,6 @@
                     <h3>Kunden im Mittelpunkt</h3>
                     <p>Unsere Kunden stehen für uns an erster Stelle. Wir legen Wert auf eine professionelle und zielstrebige Beratung, um Ihnen die besten Möglichkeiten zu vermitteln.</p>
                 </div>
-                <div class="consulting-card reveal-fade reveal-delay-1">
-                    <div class="card-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Transparente Kommunikation</h3>
-                    <p>Wir legen größten Wert auf eine vertrauensvolle und transparente Kommunikation, damit Sie stets über alle Prozesse informiert sind.</p>
-                </div>
                 <div class="consulting-card reveal-fade reveal-delay-2">
                     <div class="card-icon">
                         <i class="fas fa-handshake"></i>
@@ -613,60 +606,6 @@
         </div>
     </section>
 
-    <!-- Appointment Section -->
-    <section id="termin" class="appointment">
-        <div class="container">
-            <div class="section-heading text-center">
-                <span class="subheading">Terminvereinbarung</span>
-                <h2 class="heading">Termin buchen</h2>
-                <p class="heading-text">Vereinbaren Sie einen Termin zur Besichtigung unserer Lagerräume oder für ein persönliches Beratungsgespräch.</p>
-            </div>
-            <div class="appointment-form-wrapper reveal-fade">
-                <form id="appointment-form" class="form">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="app-name">Name</label>
-                            <input type="text" id="app-name" name="app-name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="app-email">E-Mail</label>
-                            <input type="email" id="app-email" name="app-email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="app-phone">Telefon</label>
-                            <input type="tel" id="app-phone" name="app-phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="app-date">Wunschtermin</label>
-                            <input type="date" id="app-date" name="app-date" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="app-time">Uhrzeit</label>
-                            <input type="time" id="app-time" name="app-time" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="app-reason">Termingrund</label>
-                            <select id="app-reason" name="app-reason" required>
-                                <option value="">Bitte wählen</option>
-                                <option value="Besichtigung">Lagerbesichtigung</option>
-                                <option value="Beratung">Beratungsgespräch</option>
-                                <option value="Vertragsabschluss">Vertragsabschluss</option>
-                                <option value="Sonstiges">Sonstiges</option>
-                            </select>
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="app-message">Nachricht</label>
-                            <textarea id="app-message" name="app-message" rows="3"></textarea>
-                        </div>
-                        <div class="form-group full-width">
-                            <button type="submit" class="btn btn-primary">Termin buchen <i class="fas fa-calendar-check"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
@@ -732,6 +671,99 @@
                     <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
                     <div class="testimonial-dots"></div>
                     <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>ir maßgeschneiderte Angebote an, die an verschiedene Aspekte Ihres Unternehmens angepasst sind.</p>
+                    <div class="offer-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Anfrage senden</h3>
+                                <p>Füllen Sie das Formular mit Ihren spezifischen Anforderungen aus</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Beratungsgespräch</h3>
+                                <p>Wir kontaktieren Sie für ein persönliches Beratungsgespräch</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Individuelles Angebot</h3>
+                                <p>Sie erhalten ein maßgeschneidertes Angebot für Ihre Bedürfnisse</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-form reveal-slide-left">
+                    <form id="offer-form" class="form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="company">Unternehmen</label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-Mail</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefon</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="message">Nachricht</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="pallets">Anzahl der Paletten</label>
+                                <input type="number" id="pallets" name="pallets" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label for="duration">Lagerdauer (Monate)</label>
+                                <input type="number" id="duration" name="duration" min="1">
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Gewünschte Zusatzleistungen</label>
+                                <div class="checkbox-grid">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="service-1" name="services" value="Wareneingangskontrolle">
+                                        <label for="service-1">Wareneingangskontrolle</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="service-2" name="services" value="Kommissionierung">
+                                        <label for="service-2">Kommissionierung</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="service-3" name="services" value="LKW-Beladung">
+                                        <label for="service-3">LKW-Beladung</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="service-4" name="services" value="Inventurdurchführung">
+                                        <label for="service-4">Inventurdurchführung</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="service-5" name="services" value="Barcode-Erstellung">
+                                        <label for="service-5">Barcode-Erstellung</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group full-width">
+                                <div id="cost-estimate" class="hidden"></div>
+                            </div>
+                            <div class="form-group full-width">
+                                <button type="button" id="calculate-btn" class="btn btn-secondary">Kosten berechnen</button>
+                                <button type="submit" class="btn btn-primary">Angebot anfordern <i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
