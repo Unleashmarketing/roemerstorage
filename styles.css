@@ -17,7 +17,7 @@
     --info: #17a2b8;
     --warning: #ffc107;
     --danger: #dc3545;
-    
+
     /* Fonts */
     --font-primary: 'Poppins', sans-serif;
     --font-size-base: 16px;
@@ -25,31 +25,31 @@
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
-    
+
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 3rem;
     --spacing-xl: 5rem;
-    
+
     /* Border radius */
     --radius-sm: 4px;
     --radius-md: 8px;
     --radius-lg: 16px;
     --radius-full: 50%;
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.1);
-    
+
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
-    
+
     /* Z-index */
     --z-back: -1;
     --z-normal: 1;
@@ -237,6 +237,8 @@ section {
 
 .btn-outline {
     background-color: transparent;
+    border: 2px solid white;
+    color: white;
     border: 2px solid var(--primary);
     color: var(--primary);
 }
@@ -246,36 +248,17 @@ section {
     color: var(--white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
+    border: 0px solid;
 }
 
-/* Modified for better visibility on dark backgrounds */
 .btn-outline.light {
     border-color: var(--white);
     color: var(--white);
-    background-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    font-weight: var(--font-weight-bold);
 }
 
 .btn-outline.light:hover {
     background-color: var(--white);
     color: var(--primary);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-}
-
-/* New styles for Hero CTA buttons */
-.hero .btn-outline {
-    border-color: var(--white);
-    color: var(--white);
-    background-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    font-weight: var(--font-weight-bold);
-}
-
-.hero .btn-outline:hover {
-    background-color: var(--white);
-    color: var(--primary);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 /*----------------------------------------
@@ -408,7 +391,7 @@ section {
 ----------------------------------------*/
 .hero {
     height: 100vh;
-    min-height: 700px; /* Increased from 600px for better visibility */
+    min-height: 600px;
     padding: 0;
     position: relative;
     display: flex;
@@ -474,10 +457,8 @@ section {
     flex-direction: column;
     align-items: center;
     color: var(--white);
-    opacity: 0.9; /* Increased from 0.7 for better visibility */
+    opacity: 0.7;
     transition: all var(--transition-normal);
-    font-weight: var(--font-weight-bold); /* Added bold weight */
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Added text shadow for better visibility */
 }
 
 .scroll-indicator:hover {
@@ -486,17 +467,15 @@ section {
 }
 
 .scroll-indicator i {
-    font-size: 2.5rem; /* Increased from 2rem */
+    font-size: 2rem;
     margin-bottom: var(--spacing-xs);
     animation: bounce 2s infinite;
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); /* Added drop shadow */
 }
 
 .scroll-text {
-    font-size: 0.9rem; /* Increased from 0.85rem */
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Added text shadow */
 }
 
 @keyframes bounce {
@@ -573,22 +552,17 @@ section {
     align-items: center;
 }
 
-/* Modified to fix the white border issue */
 .about-image .image-wrapper {
     position: relative;
     overflow: hidden;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-lg);
-    height: 100%;
-    background-color: #000; /* Added dark background */
 }
 
 .about-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Changed from auto to cover */
+    height: auto;
     transition: transform var(--transition-normal);
-    display: block; /* Added to remove any gaps */
 }
 
 .about-image:hover img {
@@ -1012,7 +986,7 @@ section {
 }
 
 .cta-content p {
-    color: rgba(255, 255, 255, 0.9); /* Increased from 0.8 for better visibility */
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1.1rem;
     margin-bottom: 0;
 }
@@ -1022,19 +996,383 @@ section {
     gap: var(--spacing-sm);
 }
 
-/* Modified CTA button styles for better contrast */
-.cta-section .btn-outline {
-    border-color: var(--white);
-    color: var(--white);
-    background-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    font-weight: var(--font-weight-bold);
+/*----------------------------------------
+  Online Booking Section
+----------------------------------------*/
+.online-booking {
+    background-color: var(--white);
 }
 
-.cta-section .btn-outline:hover {
+.booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.booking-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+}
+
+.booking-features {
+    margin: var(--spacing-md) 0;
+}
+
+/*----------------------------------------
+  Consulting Section
+----------------------------------------*/
+.consulting {
+    background-color: var(--light);
+}
+
+.consulting-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.consulting-card {
     background-color: var(--white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.consulting-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.consulting-card .card-icon {
+    margin: 0 auto var(--spacing-sm);
+}
+
+.consulting-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.consulting-cta {
+    text-align: center;
+}
+
+/*----------------------------------------
+  Offer Request Section
+----------------------------------------*/
+.offer-request {
+    background-color: var(--white);
+}
+
+.offer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+.offer-steps {
+    margin-top: var(--spacing-md);
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: var(--radius-full);
+    font-weight: var(--font-weight-bold);
+    margin-right: var(--spacing-sm);
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.step-content p {
+    color: var(--gray);
+    margin-bottom: 0;
+}
+
+/*----------------------------------------
+  Forms
+----------------------------------------*/
+.form {
+    background-color: var(--white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-sm);
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--gray-dark);
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(123, 14, 14, 0.1);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: auto;
+    margin-right: var(--spacing-xs);
+}
+
+.checkbox-item label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+input.is-invalid,
+textarea.is-invalid,
+select.is-invalid {
+    border-color: var(--danger);
+}
+
+.error-message {
+    color: var(--danger);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.success-message {
+    background-color: rgba(40, 167, 69, 0.1);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.success-message i {
+    font-size: 3rem;
+    color: var(--success);
+    margin-bottom: var(--spacing-sm);
+}
+
+#cost-estimate {
+    background-color: var(--light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    text-align: center;
+}
+
+#cost-estimate.hidden {
+    display: none;
+}
+
+#cost-estimate h3 {
+    margin-bottom: var(--spacing-sm);
+}
+
+#cost-estimate .estimate {
+    font-size: 1.5rem;
+    margin: var(--spacing-sm) 0;
+}
+
+#cost-estimate .note {
+    font-size: 0.875rem;
+    color: var(--gray);
+}
+
+/*----------------------------------------
+  Testimonials Section
+----------------------------------------*/
+.testimonials {
+    background-color: var(--white);
+}
+
+.testimonial-slider {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.testimonial-track {
+    display: flex;
+    transition: transform var(--transition-slow);
+}
+
+.testimonial-slide {
+    min-width: 100%;
+    padding: 0 var(--spacing-sm);
+}
+
+.testimonial-card {
+    background-color: var(--light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    margin-top: 30px;
+}
+
+.quote-icon {
+    position: absolute;
+    top: -25px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.testimonial-content {
+    margin-bottom: var(--spacing-md);
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.author-image {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin-right: var(--spacing-sm);
+}
+
+.author-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    margin-bottom: 0.25rem;
+}
+
+.author-info p {
+    color: var(--gray);
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.testimonial-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--spacing-md);
+}
+
+.prev-btn,
+.next-btn {
+    width: 40px;
+    height: 40px;
+    background-color: var(--light);
+    border: none;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
     color: var(--primary);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.testimonial-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 var(--spacing-sm);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--gray-light);
+    border-radius: var(--radius-full);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.dot.active {
+    background-color: var(--primary);
+    transform: scale(1.3);
 }
 
 /*----------------------------------------
@@ -1356,24 +1694,24 @@ section {
     html {
         font-size: 15px;
     }
-    
+
     .about-grid,
     .booking-grid,
     .offer-grid,
     .contact-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .about-image,
     .booking-image {
         order: -1;
     }
-    
+
     .cta-grid {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .cta-buttons {
         justify-content: center;
     }
@@ -1383,15 +1721,15 @@ section {
     .heading-xl {
         font-size: 2.5rem;
     }
-    
+
     .heading-lg {
         font-size: 2rem;
     }
-    
+
     .header .container {
         padding: 0 var(--spacing-sm);
     }
-    
+
     .nav {
         position: fixed;
         top: 0;
@@ -1405,52 +1743,52 @@ section {
         padding: 80px var(--spacing-md) var(--spacing-md);
         overflow-y: auto;
     }
-    
+
     .nav.active {
         right: 0;
     }
-    
+
     .nav-list {
         flex-direction: column;
         gap: var(--spacing-md);
     }
-    
+
     .hamburger {
         display: flex;
     }
-    
+
     .cta-button {
         display: none;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
         gap: var(--spacing-sm);
     }
-    
+
     .benefits-tabs,
     .services-tabs {
         flex-wrap: wrap;
     }
-    
+
     .form-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .form-group.full-width {
         grid-column: 1;
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         text-align: center;
         gap: var(--spacing-md);
     }
-    
+
     .footer-legal {
         justify-content: center;
     }
-    
+
     .back-to-top {
         right: 15px;
         bottom: 15px;
@@ -1461,45 +1799,45 @@ section {
     section {
         padding: var(--spacing-lg) 0;
     }
-    
+
     .container {
         padding: 0 var(--spacing-sm);
     }
-    
+
     .heading-xl {
         font-size: 2rem;
     }
-    
+
     .heading-lg {
         font-size: 1.75rem;
     }
-    
+
     .number-grid {
         grid-template-columns: 1fr 1fr;
     }
-    
+
     .tab-btn {
         font-size: 0.9rem;
         padding: var(--spacing-xs) var(--spacing-sm);
     }
-    
+
     .service-tab {
         width: 120px;
     }
-    
+
     .service-content.active {
         flex-direction: column;
     }
-    
+
     .testimonial-card {
         padding: var(--spacing-sm);
     }
-    
+
     .cookie-content {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .cookie-buttons {
         width: 100%;
         justify-content: center;
