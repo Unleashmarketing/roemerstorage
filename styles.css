@@ -237,8 +237,8 @@ section {
 
 .btn-outline {
     background-color: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid var(--primary);
+    color: var(--primary);
 }
 
 .btn-outline:hover {
@@ -246,7 +246,6 @@ section {
     color: var(--white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
-    border: 0px solid;
 }
 
 .btn-outline.light {
