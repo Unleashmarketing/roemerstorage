@@ -448,6 +448,20 @@ section {
     margin-top: var(--spacing-md);
 }
 
+.hero-buttons .btn-outline {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--white);
+    color: var(--white);
+    font-weight: var(--font-weight-medium);
+    backdrop-filter: blur(5px);
+}
+
+.hero-buttons .btn-outline:hover {
+    background-color: var(--white);
+    color: var(--primary);
+    border-color: var(--white);
+}
+
 .scroll-indicator {
     position: absolute;
     bottom: var(--spacing-md);
@@ -965,6 +979,35 @@ section {
     padding: var(--spacing-xl) 0;
     background-color: var(--primary);
     color: var(--white);
+}
+
+.cta-section .btn-primary {
+    background-color: var(--white);
+    color: var(--primary);
+    border: 2px solid var(--white);
+    font-weight: var(--font-weight-bold);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-section .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.cta-section .btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+    font-weight: var(--font-weight-medium);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-section .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: var(--white);
+    color: var(--white);
+    transform: translateY(-2px);
 }
 
 .cta-grid {
