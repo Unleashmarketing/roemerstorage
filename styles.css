@@ -1123,7 +1123,7 @@ section {
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-md);
+    gap: 15px;
 }
 
 .form-group {
