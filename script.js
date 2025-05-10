@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     'use strict';
-    
+
     // ----------------------------------------
     // Preloader
     // ----------------------------------------
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             preloader.style.display = 'none';
         }, 300);
     });
-    
+
     // ----------------------------------------
     // Sticky Header
     // ----------------------------------------
@@ -23,19 +23,19 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.remove('sticky');
         }
     });
-    
+
     // ----------------------------------------
     // Mobile Menu
     // ----------------------------------------
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.nav');
     const body = document.body;
-    
+
     if (hamburger) {
         hamburger.addEventListener('click', function() {
             this.classList.toggle('active');
             nav.classList.toggle('active');
-            
+
             if (nav.classList.contains('active')) {
                 body.style.overflow = 'hidden';
             } else {
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
         if (
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             body.style.overflow = '';
         }
     });
-    
+
     // Close menu when clicking on nav links
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
@@ -67,20 +67,20 @@ document.addEventListener('DOMContentLoaded', function() {
             body.style.overflow = '';
         });
     });
-    
+
     // ----------------------------------------
     // Active Navigation Links
     // ----------------------------------------
     const sections = document.querySelectorAll('section[id]');
-    
+
     function setActiveNavLink() {
         const scrollY = window.scrollY;
-        
+
         sections.forEach(section => {
             const sectionHeight = section.offsetHeight;
             const sectionTop = section.offsetTop - 100;
             const sectionId = section.getAttribute('id');
-            
+
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
                 const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
                 if (activeLink) {
@@ -92,26 +92,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     window.addEventListener('scroll', setActiveNavLink);
-    
+
     // ----------------------------------------
     // Smooth Scrolling
     // ----------------------------------------
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
-            
+
             if (targetId === '#') return;
-            
+
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 const headerHeight = header.offsetHeight;
                 const targetPosition = targetElement.offsetTop - headerHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -119,12 +119,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // ----------------------------------------
     // Back to Top Button
     // ----------------------------------------
     const backToTopBtn = document.querySelector('.back-to-top');
-    
+
     window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
             backToTopBtn.classList.add('visible');
@@ -132,66 +132,66 @@ document.addEventListener('DOMContentLoaded', function() {
             backToTopBtn.classList.remove('visible');
         }
     });
-    
+
     backToTopBtn.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
     });
-    
+
     // ----------------------------------------
     // Reveal Animation on Scroll
     // ----------------------------------------
     const revealElements = document.querySelectorAll('.reveal-fade, .reveal-slide-left, .reveal-slide-right');
-    
+
     function revealOnScroll() {
         const windowHeight = window.innerHeight;
         const revealPoint = 150;
-        
+
         revealElements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
-            
+
             if (elementTop < windowHeight - revealPoint) {
                 element.classList.add('active');
             }
         });
     }
-    
+
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', revealOnScroll);
-    
+
     // ----------------------------------------
     // Number Counter Animation
     // ----------------------------------------
     const numberElements = document.querySelectorAll('.number');
     let countersStarted = false;
-    
+
     function startCounters() {
         if (countersStarted) return;
-        
+
         const keyNumbersSection = document.querySelector('.key-numbers');
-        
+
         if (!keyNumbersSection) return;
-        
+
         const sectionTop = keyNumbersSection.offsetTop;
         const sectionHeight = keyNumbersSection.offsetHeight;
         const windowHeight = window.innerHeight;
         const scrollY = window.scrollY;
-        
+
         if (scrollY > (sectionTop - windowHeight + 200) && scrollY < (sectionTop + sectionHeight)) {
             countersStarted = true;
-            
+
             numberElements.forEach(numberElement => {
                 const finalValue = parseInt(numberElement.getAttribute('data-count'));
                 const duration = 2000; // ms
                 const step = Math.ceil(finalValue / (duration / 20)); // Update every 20ms
-                
+
                 let currentValue = 0;
-                
+
                 const counter = setInterval(() => {
                     currentValue += step;
-                    
+
                     if (currentValue >= finalValue) {
                         numberElement.textContent = finalValue;
                         clearInterval(counter);
@@ -202,67 +202,67 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
-    
+
     window.addEventListener('scroll', startCounters);
     window.addEventListener('load', startCounters);
-    
+
     // ----------------------------------------
     // Tab System
     // ----------------------------------------
     // Benefits Tabs
     const benefitTabBtns = document.querySelectorAll('.tab-btn');
     const benefitTabPanels = document.querySelectorAll('.tab-panel');
-    
+
     benefitTabBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             // Remove active class from all buttons
             benefitTabBtns.forEach(btn => {
                 btn.classList.remove('active');
             });
-            
+
             // Add active class to clicked button
             this.classList.add('active');
-            
+
             // Get the tab id
             const tabId = this.getAttribute('data-tab');
-            
+
             // Remove active class from all panels
             benefitTabPanels.forEach(panel => {
                 panel.classList.remove('active');
             });
-            
+
             // Add active class to corresponding panel
             document.getElementById(tabId).classList.add('active');
         });
     });
-    
+
     // Services Tabs
     const serviceTabBtns = document.querySelectorAll('.service-tab');
     const serviceContents = document.querySelectorAll('.service-content');
-    
+
     serviceTabBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             // Remove active class from all buttons
             serviceTabBtns.forEach(btn => {
                 btn.classList.remove('active');
             });
-            
+
             // Add active class to clicked button
             this.classList.add('active');
-            
+
             // Get the service id
             const serviceId = this.getAttribute('data-service');
-            
+
             // Remove active class from all contents
             serviceContents.forEach(content => {
                 content.classList.remove('active');
             });
-            
+
             // Add active class to corresponding content
             document.getElementById(serviceId).classList.add('active');
         });
     });
-    
+
     // ----------------------------------------
     // Testimonial Slider
     // ----------------------------------------
@@ -271,35 +271,35 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     const dotsContainer = document.querySelector('.testimonial-dots');
-    
+
     if (testimonialTrack && testimonialSlides.length > 0) {
         let currentSlide = 0;
         const slideWidth = 100; // 100%
-        
+
         // Create dots
         testimonialSlides.forEach((_, index) => {
             const dot = document.createElement('span');
             dot.classList.add('dot');
             if (index === 0) dot.classList.add('active');
-            
+
             dot.addEventListener('click', () => {
                 goToSlide(index);
             });
-            
+
             dotsContainer.appendChild(dot);
         });
-        
+
         const dots = document.querySelectorAll('.dot');
-        
+
         // Event listeners for buttons
         prevBtn.addEventListener('click', () => {
             goToSlide(currentSlide - 1);
         });
-        
+
         nextBtn.addEventListener('click', () => {
             goToSlide(currentSlide + 1);
         });
-        
+
         function goToSlide(slideIndex) {
             // Handle loop
             if (slideIndex < 0) {
@@ -307,51 +307,51 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (slideIndex >= testimonialSlides.length) {
                 slideIndex = 0;
             }
-            
+
             // Update current slide
             currentSlide = slideIndex;
-            
+
             // Move track
             testimonialTrack.style.transform = `translateX(-${slideWidth * currentSlide}%)`;
-            
+
             // Update dots
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
             });
         }
-        
+
         // Auto slide
         let slideInterval = setInterval(() => {
             goToSlide(currentSlide + 1);
         }, 5000);
-        
+
         // Pause on hover
         testimonialTrack.addEventListener('mouseenter', () => {
             clearInterval(slideInterval);
         });
-        
+
         testimonialTrack.addEventListener('mouseleave', () => {
             slideInterval = setInterval(() => {
                 goToSlide(currentSlide + 1);
             }, 5000);
         });
-        
+
         // Swipe support for mobile
         let touchStartX = 0;
         let touchEndX = 0;
-        
+
         testimonialTrack.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
         });
-        
+
         testimonialTrack.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
         });
-        
+
         function handleSwipe() {
             const swipeThreshold = 50; // Minimum swipe distance
-            
+
             if (touchStartX - touchEndX > swipeThreshold) {
                 // Swipe left
                 goToSlide(currentSlide + 1);
@@ -361,25 +361,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    
+
     // ----------------------------------------
     // Form Validation
     // ----------------------------------------
     const forms = document.querySelectorAll('form');
-    
+
     forms.forEach(form => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             let isValid = true;
             const requiredFields = form.querySelectorAll('[required]');
-            
+
             requiredFields.forEach(field => {
                 // Remove existing validation styling and messages
                 field.classList.remove('is-invalid');
                 const existingError = field.parentElement.querySelector('.error-message');
                 if (existingError) existingError.remove();
-                
+
                 // Check if field is empty
                 if (!field.value.trim()) {
                     isValid = false;
@@ -389,52 +389,52 @@ document.addEventListener('DOMContentLoaded', function() {
                     showError(field, 'Bitte geben Sie eine gültige E-Mail-Adresse ein');
                 }
             });
-            
+
             if (isValid) {
                 // Simulate form submission
                 const formId = form.getAttribute('id');
-                
+
                 // Replace form with success message
                 const successMessage = document.createElement('div');
                 successMessage.className = 'success-message';
-                
+
                 let message = '';
-                
+
                 if (formId === 'offer-form') {
                     message = 'Vielen Dank für Ihre Anfrage! Wir werden uns in Kürze mit Ihrem individuellen Angebot bei Ihnen melden.';
                 } else {
                     message = 'Vielen Dank für Ihre Nachricht! Wir werden uns in Kürze bei Ihnen melden.';
                 }
-                
+
                 successMessage.innerHTML = `
                     <i class="fas fa-check-circle"></i>
                     <h3>Erfolgreich gesendet!</h3>
                     <p>${message}</p>
                 `;
-                
+
                 form.parentElement.replaceChild(successMessage, form);
-                
+
                 // Scroll to success message
                 successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         });
     });
-    
+
     function showError(field, message) {
         field.classList.add('is-invalid');
-        
+
         const errorMessage = document.createElement('div');
         errorMessage.className = 'error-message';
         errorMessage.textContent = message;
-        
+
         field.parentElement.appendChild(errorMessage);
     }
-    
+
     function isValidEmail(email) {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
     }
-    
+
     // ----------------------------------------
     // Cost Calculator
     // ----------------------------------------
@@ -442,12 +442,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const costEstimate = document.getElementById('cost-estimate');
     const palletsInput = document.getElementById('pallets');
     const durationInput = document.getElementById('duration');
-    
+
     if (calculateBtn && costEstimate && palletsInput && durationInput) {
         calculateBtn.addEventListener('click', function() {
             const pallets = parseInt(palletsInput.value) || 0;
             const duration = parseInt(durationInput.value) || 0;
-            
+
             if (pallets <= 0 || duration <= 0) {
                 costEstimate.innerHTML = `
                     <h3>Kostenabschätzung</h3>
@@ -456,10 +456,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 costEstimate.classList.remove('hidden');
                 return;
             }
-            
+
             // Base rate per pallet per month
             const baseRate = 12.50;
-            
+
             // Volume discount
             let rate = baseRate;
             if (pallets > 50) {
@@ -471,7 +471,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (pallets > 200) {
                 rate = baseRate * 0.8;
             }
-            
+
             // Duration discount
             let durationFactor = 1;
             if (duration >= 6) {
@@ -480,10 +480,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (duration >= 12) {
                 durationFactor = 0.9;
             }
-            
+
             const total = pallets * rate * duration * durationFactor;
             const monthlyRate = total / duration;
-            
+
             costEstimate.innerHTML = `
                 <h3>Kostenabschätzung</h3>
                 <p>Basierend auf <strong>${pallets} Paletten</strong> für <strong>${duration} Monate</strong>:</p>
@@ -503,9 +503,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <p class="note">Dies ist eine unverbindliche Kostenschätzung. Für ein genaues Angebot kontaktieren Sie uns bitte.</p>
             `;
-            
+
             costEstimate.classList.remove('hidden');
-            
+
             // Add some styling to the estimate
             const estimateDetails = costEstimate.querySelector('.estimate-details');
             if (estimateDetails) {
@@ -513,14 +513,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 estimateDetails.style.marginBottom = '15px';
                 estimateDetails.style.borderRadius = '5px';
                 estimateDetails.style.overflow = 'hidden';
-                
+
                 const estimateRows = estimateDetails.querySelectorAll('.estimate-row');
                 estimateRows.forEach((row, index) => {
                     row.style.display = 'flex';
                     row.style.justifyContent = 'space-between';
                     row.style.padding = '10px 15px';
                     row.style.backgroundColor = index % 2 === 0 ? '#f9f9f9' : '#ffffff';
-                    
+
                     if (row.classList.contains('total')) {
                         row.style.backgroundColor = 'var(--primary)';
                         row.style.color = 'white';
@@ -530,3 +530,42 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // ----------------------------------------
+    // Cookie Consent
+    // ----------------------------------------
+    const cookieConsent = document.querySelector('.cookie-consent');
+    const cookieAccept = document.querySelector('.cookie-accept');
+    const cookieSettings = document.querySelector('.cookie-settings');
+    
+    // Check if user has already accepted cookies
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+    
+    if (!cookiesAccepted && cookieConsent && cookieAccept && cookieSettings) {
+        // Show cookie consent after a delay
+        setTimeout(() => {
+            cookieConsent.classList.add('show');
+        }, 2000);
+        
+        // Accept cookies
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieConsent.classList.remove('show');
+        });
+        
+        // Cookie settings (for now, just close the banner)
+        cookieSettings.addEventListener('click', () => {
+            // Here you would typically open a more detailed cookie settings modal
+            // For simplicity, we'll just close the banner
+            cookieConsent.classList.remove('show');
+        });
+    }
+    
+    // ----------------------------------------
+    // Current Year
+    // ----------------------------------------
+    const yearElements = document.querySelectorAll('.current-year');
+    yearElements.forEach(element => {
+        element.textContent = new Date().getFullYear();
+    });
+});
